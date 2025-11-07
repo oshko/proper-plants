@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+article {
+    border: 1px solid grey;
+    border-radius: 1em;
+    padding: 2em;
+    margin: 1em;
+}
+
+span {
+    font-size: large;
+}
+
+#root {
+    display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-auto-rows: auto;
+  margin: 0.5em;
+}
