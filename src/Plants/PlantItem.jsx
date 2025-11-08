@@ -1,15 +1,19 @@
 export default function PlantItem({ plant, preCart, setCart }) {
   function addCart() {
-    let quantity = 1;
-    if (preCart.some((item) => item === plant)) {
-      quantity += 1;
-      return console.log(preCart);
+    const checkItem = preCart.find((cartItem) => cartItem.id === plant.id);
+    if (checkItem) {
+      return setCart(
+        preCart.map((cartItem) => {
+          if (cartItem.id === plant.id) {
+            return { ...cartItem, quantity: cartItem.quantity + 1 };
+          } else return cartItem;
+        })
+      );
     } else {
-      setCart((preCart) => [...preCart, { ...plant, quantity: quantity }]);
+      return setCart((preCart) => [...preCart, { ...plant, quantity: 1 }]);
     }
-
-    return preCart;
   }
+
   return (
     <>
       <section>
