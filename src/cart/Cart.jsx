@@ -1,15 +1,19 @@
 import CartItem from "./CartItem";
-export default function Cart({ cartItem }) {
-  console.log(cartItem);
-  if (cartItem.length === 0) {
+export default function Cart({ cartItems, addOneMore, removeOneItem }) {
+  console.log(cartItems);
+  if (cartItems.length === 0) {
     return <p>Please select the plant</p>;
   }
 
   return (
     <>
-      {cartItem.map((item) => (
+      {cartItems.map((item) => (
         <article key={item.id}>
-          <CartItem item={item} />
+          <CartItem
+            item={item}
+            addOneMore={addOneMore}
+            removeOneItem={removeOneItem}
+          />
         </article>
       ))}
     </>

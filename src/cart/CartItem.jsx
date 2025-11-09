@@ -1,11 +1,11 @@
-export default function CartItem({ item }) {
+export default function CartItem({ item, addOneMore, removeOneItem }) {
   return (
     <>
       <span>{item.image}</span>
       <p>{item.name}</p>
-      <button>+</button>
+      <button onClick={() => addOneMore(item)}>+</button>
       <p>Quantity: {item.quantity}</p>
-      <button>-</button>
+      <button onClick={() => removeOneItem(item)}>-</button>
     </>
   );
 }
