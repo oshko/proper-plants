@@ -8,7 +8,7 @@ export default function Cart({ cartItems, addOneMore, removeOneItem }) {
   return (
     <>
       {cartItems.map((item) => (
-        <article key={item.id}>
+        <article key={item.id} className="cart-item">
           <CartItem
             item={item}
             addOneMore={addOneMore}

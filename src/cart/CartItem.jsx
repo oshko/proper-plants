@@ -1,11 +1,13 @@
 export default function CartItem({ item, addOneMore, removeOneItem }) {
   return (
-    <>
-      <span>{item.image}</span>
+    <div className="cart-item-content">
+      <span id="plant-icon">{item.image}</span>
       <p>{item.name}</p>
-      <button onClick={() => addOneMore(item)}>+</button>
-      <p>Quantity: {item.quantity}</p>
-      <button onClick={() => removeOneItem(item)}>-</button>
-    </>
+      <div className="button-row">
+        <button onClick={() => removeOneItem(item)}>-</button>
+        <p>Quantity: {item.quantity}</p>
+        <button onClick={() => addOneMore(item)}>+</button>
+      </div>
+    </div>
   );
 }

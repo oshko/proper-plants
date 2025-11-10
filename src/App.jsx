@@ -34,7 +34,8 @@ export default function App() {
   }
 
   return (
-    <>
+    <div className="app-container">
+      <h1>Proper Plant</h1>
       <PlantList plantData={plantData} currCart={cart} setCart={setCart} />
       <section>
         <h2>Cart</h2>
@@ -44,6 +45,6 @@ export default function App() {
           removeOneItem={removeOneItem}
         />
       </section>
-    </>
+    </div>
   );
 }

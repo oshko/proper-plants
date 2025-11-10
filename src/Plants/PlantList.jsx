@@ -4,7 +4,7 @@ export default function PlantList({ plantData, currCart, setCart }) {
     <>
       <section id="plantList">
         {plantData.map((plant) => (
-          <article key={plant.id}>
+          <article key={plant.id} className="plant-card">
             <PlantItem plant={plant} preCart={currCart} setCart={setCart} />
           </article>
         ))}
